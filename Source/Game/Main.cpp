@@ -8,6 +8,8 @@
 
 #include "Common.h"
 
+#include <memory>
+
 #include "Game/Game.h"
 
 /*F+F+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -33,12 +35,12 @@ INT WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, 
     //Unreferenced parameters
     UNREFERENCED_PARAMETER(hPrevInstance);
     UNREFERENCED_PARAMETER(lpCmdLine);
-    //Initialization
-    if (FAILED(library::InitWindow(hInstance, nCmdShow)))
-    {
-        return 0;
-    }
 
+    std::unique_ptr<library::Game> game = 
+  std::make_unique<library::Game>(L"Game Graphics Programming Lab 02: Object Oriented Design");
+    //Initialization
+   
+    /*lab1 initialize
     if (FAILED(library::InitDevice()))
     {
         library::CleanupDevice();
@@ -64,5 +66,12 @@ INT WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, 
     library::CleanupDevice();
 
     return static_cast<INT>(msg.wParam);
+    */
+    if (FAILED(game->Initialize(hInstance, nCmdShow)))
+    {
+        return 0;
+    }
+
+    return game->Run();
 }
 
