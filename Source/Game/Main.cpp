@@ -32,12 +32,17 @@
 -----------------------------------------------------------------F-F*/
 INT WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _In_ LPWSTR lpCmdLine, _In_ INT nCmdShow)
 {
+#ifdef _DEBUG
+    _CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
+#endif
+
     //Unreferenced parameters
     UNREFERENCED_PARAMETER(hPrevInstance);
     UNREFERENCED_PARAMETER(lpCmdLine);
 
     std::unique_ptr<library::Game> game = 
-  std::make_unique<library::Game>(L"Game Graphics Programming Lab 02: Object Oriented Design");
+  std::make_unique<library::Game>(L"Game Graphics Programming Lab 03: Rendering a Triangle");
+
     //Initialization
    
     /*lab1 initialize
