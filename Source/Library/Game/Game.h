@@ -18,12 +18,15 @@ namespace library
 
     /*F+F+++F+++F+++F+++F+++F+++F+++F+++F+++F+++F+++F+++F+++F+++F+++F+++F
       Function: InitWindow
+
       Summary:  Registers the window class and creates a window
+
       Args:     HINSTANCE hInstance
                   Handle to the instance
                 INT nCmdShow
                   Is a flag that says whether the main application window
                   will be minimized, maximized, or shown normally
+
         Returns:  HRESULT
                     Status code
     F---F---F---F---F---F---F---F---F---F---F---F---F---F---F---F---F-F*/
@@ -31,7 +34,9 @@ namespace library
 
     /*F+F+++F+++F+++F+++F+++F+++F+++F+++F+++F+++F+++F+++F+++F+++F+++F+++F
       Function: InitDevice
+
       Summary:  Create Direct3D device and swap chain
+
       Returns:  HRESULT
                   Status code
     F---F---F---F---F---F---F---F---F---F---F---F---F---F---F---F---F-F*/
@@ -39,12 +44,14 @@ namespace library
 
     /*F+F+++F+++F+++F+++F+++F+++F+++F+++F+++F+++F+++F+++F+++F+++F+++F+++F
       Function: CleanupDevice
+
       Summary:  Clean up the objects we've created
     F---F---F---F---F---F---F---F---F---F---F---F---F---F---F---F---F-F*/
     void CleanupDevice();
 
     /*F+F+++F+++F+++F+++F+++F+++F+++F+++F+++F+++F+++F+++F+++F+++F+++F+++F
       Function: Render
+
       Summary:  Render the frame
     F---F---F---F---F---F---F---F---F---F---F---F---F---F---F---F---F-F*/
     void Render();
